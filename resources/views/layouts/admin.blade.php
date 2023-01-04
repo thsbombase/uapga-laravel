@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - UAPGA Bootstrap Template</title>
+    <title>Dashboard - UAPGA</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -20,16 +21,25 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/bootstrap-icons/bootstrap-icons.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/boxicons/css/boxicons.min.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/quill/quill.snow.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/quill/quill.bubble.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/remixicon/remixicon.css') }}"  rel="stylesheet">
-    <link href="{{ asset('admin/vendor/simple-datatables/style.css') }}"  rel="stylesheet">
+    <link href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('admin/css/style.css' ) }}" rel="stylesheet">
+    @php
+    $main_color = \App\Models\SystemColor::first();
+    echo '<style>
+        :root {
+            scroll-behavior: smooth;
+            --main-color: '. $main_color->color .';
+        }
+    </style>'
+    @endphp
 
     <!-- =======================================================
   * Template Name: UAPGA - v2.4.1
@@ -51,16 +61,29 @@
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
 
-        <div class="search-bar">
+        {{-- <div class="search-bar">
             <form class="search-form d-flex align-items-center" method="POST" action="#">
                 <input type="text" name="query" placeholder="Search" title="Enter search keyword">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
             </form>
-        </div><!-- End Search Bar -->
+        </div><!-- End Search Bar --> --}}
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
+                <!-- Authentication Links -->
+                @guest
+                @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @endif
 
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                @else
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -73,15 +96,19 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
-
+                @endguest
             </ul>
         </nav><!-- End Icons Navigation -->
 
@@ -111,6 +138,12 @@
                     <span>Sponsors</span>
                 </a>
             </li><!-- End Dashboard Nav -->
+            <li class="nav-item">
+                <a class="nav-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-grid"></i>
+                    <span>Change System Color</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -118,7 +151,28 @@
     <main id="main" class="main">
         @yield('content')
     </main><!-- End #main -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change System Color</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('system_color') }}" method="POST">
+                        @csrf
+                        <input type="color" name="color" @if ($main_color->color) value="{{ $main_color->color }}"
+                        @else value="" @endif>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
@@ -141,6 +195,33 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
+
+    {{-- Toast Notification --}}
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+        var notyf = new Notyf({
+            delay: 9000,
+            position: {
+                x: 'left',
+                y: 'bottom'
+            }
+        });
+        
+        @if(Session::has('success'))
+        notyf.success('{{ session('success') }}');
+        @endif
+        
+        @if(Session::has('error'))
+        notyf.error('{{ session('error') }}');
+        @endif
+        @if(Session::has('warning'))
+        notyf.warning('{{ session('warning') }}');
+        @endif
+        
+        @if(Session::has('info'))
+        notyf.info('{{ session('info') }}');
+        @endif
+    </script>
 
 </body>
 

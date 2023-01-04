@@ -28,6 +28,15 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('landing/css/style.css') }}" rel="stylesheet">
 
+    @php
+    $main_color = \App\Models\SystemColor::first();
+    echo '<style>
+        :root {
+            scroll-behavior: smooth;
+            --main-color: '. $main_color->color .';
+        }
+    </style>'
+    @endphp
     <!-- =======================================================
   * Template Name: UAPGA - v4.9.1
   * Template URL: https://bootstrapmade.com/UAPGA-bootstrap-app-landing-page-template/
@@ -58,9 +67,9 @@
                             href="{{ route('partners') }}">Partners</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'contact_us') active @endif "
                             href="{{ route('contact_us') }}">Contact Us</a></li>
-                    <li><a class=" @if (Route::currentRouteName() == 'admin') active @endif "
-                            href="{{ route('admin') }}">Login</a></li>
-                    <li><a href="NiceAdmin/index.html">Register</a></li>
+                    <li><a class=" @if (Route::currentRouteName() == 'login') active @endif "
+                            href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

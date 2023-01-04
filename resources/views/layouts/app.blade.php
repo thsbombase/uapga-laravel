@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'UAPGA') }}</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -27,6 +27,15 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('admin/css/style.css' ) }}" rel="stylesheet">
+    @php
+    $main_color = \App\Models\SystemColor::first();
+    echo '<style>
+        :root {
+            scroll-behavior: smooth;
+            --main-color: '. $main_color->color .';
+        }
+    </style>'
+    @endphp
 </head>
 
 <body>
@@ -34,7 +43,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    UAPGA
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -104,6 +113,33 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
+    {{-- Toast Notification --}}
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+        var notyf = new Notyf({
+            delay: 9000,
+            position: {
+                x: 'left',
+                y: 'bottom'
+            }
+        });
+        
+        @if(Session::has('success'))
+        notyf.success('{{ session('success') }}');
+        @endif
+        
+        @if(Session::has('error'))
+        notyf.error('{{ session('error') }}');
+        @endif
+        @if(Session::has('warning'))
+        notyf.warning('{{ session('warning') }}');
+        @endif
+        
+        @if(Session::has('info'))
+        notyf.info('{{ session('info') }}');
+        @endif
+    </script>
+
 </body>
 
 </html>
