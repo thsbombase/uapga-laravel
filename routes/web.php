@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::view('/','landing.home')->name('home');
+Route::view('/about-us','landing.about_us')->name('about_us');
+Route::view('/partners','landing.partners')->name('partners');
+Route::view('/contact-us','landing.contact')->name('contact_us');
+Route::view('/admin-dashboard','admin.dashboard')->name('admin');
