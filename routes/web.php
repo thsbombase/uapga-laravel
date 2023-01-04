@@ -21,3 +21,11 @@ Route::view('/about-us','landing.about_us')->name('about_us');
 Route::view('/partners','landing.partners')->name('partners');
 Route::view('/contact-us','landing.contact')->name('contact_us');
 Route::view('/admin-dashboard','admin.dashboard')->name('admin');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

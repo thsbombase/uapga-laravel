@@ -54,6 +54,16 @@ h6 {
   }
 }
 
+.btn.btn-primary {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.btn.btn-primary:active {
+  background-color: var(--main-color);
+  filter: brightness(85%);
+}
+
 /*--------------------------------------------------------------
 # Page Title
 --------------------------------------------------------------*/
