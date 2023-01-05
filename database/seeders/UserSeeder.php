@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@email.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',
+            'status' => 'approved',
         ]);
 
         DB::table('users')->insert([
@@ -29,6 +30,8 @@ class UserSeeder extends Seeder
             'email' => 'sponsor@email.com',
             'password' => Hash::make('password123'),
             'role' => 'sponsor',
+            'status' => 'approved'
+
         ]);
 
         DB::table('users')->insert([
@@ -36,6 +39,7 @@ class UserSeeder extends Seeder
             'email' => 'user@email.com',
             'password' => Hash::make('password123'),
             'role' => 'user',
+            'status' => 'approved'
         ]);
     }
 }

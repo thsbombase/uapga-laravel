@@ -134,19 +134,25 @@
 
             <li class="nav-item">
                 <a class="nav-link " href="card.html">
-                    <i class="bi bi-grid"></i>
+                    <i class="bi bi-postcard"></i>
                     <span>My Card</span>
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('sponsors.index') }}">
-                    <i class="bi bi-grid"></i>
+                    <i class="bi bi-building"></i>
                     <span>Sponsors</span>
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
+                <a class="nav-link " href="{{ route('users.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Manage Users</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            <li class="nav-item">
                 <a class="nav-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="bi bi-grid"></i>
+                    <i class="bi bi-paint-bucket"></i>
                     <span>Change System Color</span>
                 </a>
             </li><!-- End Dashboard Nav -->
@@ -202,7 +208,7 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
 
-   
+
 
 </body>
 

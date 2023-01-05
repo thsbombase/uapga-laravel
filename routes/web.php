@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SystemColorController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -33,4 +34,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/system-color', [SystemColorController::class, 'store'])->name('system_color');
 
     Route::resource('sponsors', SponsorController::class);
+    Route::resource('users', UserController::class);
 });
