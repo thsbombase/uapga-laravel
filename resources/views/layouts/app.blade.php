@@ -29,6 +29,13 @@
     <link href="{{ asset('admin/css/style.css' ) }}" rel="stylesheet">
     @php
     $main_color = \App\Models\SystemColor::first();
+    //if main color is not set, set default color
+    if(!$main_color){
+    $main_color = new \App\Models\SystemColor();
+    $main_color->color = '#0d6efd';
+    $main_color->save();
+    }
+
     echo '<style>
         :root {
             scroll-behavior: smooth;

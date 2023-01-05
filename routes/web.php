@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SystemColorController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AnnouncementController;
 
 
 /*
@@ -35,4 +36,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('sponsors', SponsorController::class);
     Route::resource('users', UserController::class);
+    Route::resource('announcements', AnnouncementController::class);
 });

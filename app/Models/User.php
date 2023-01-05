@@ -43,4 +43,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getRole($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getStatus($value)
+    {
+        return ucfirst($value);
+    }
 }

@@ -93,12 +93,12 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }} </span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>{{ Auth::user()->name }}</h6>
                         </li>
 
                         <li>
@@ -126,7 +126,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('home') }}">
+                <a class="nav-link" href="{{ route('home') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -136,6 +136,13 @@
                 <a class="nav-link " href="card.html">
                     <i class="bi bi-postcard"></i>
                     <span>My Card</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            @if (Auth::user()->role == 'admin')
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('announcements.index') }}">
+                    <i class="bi bi-megaphone"></i>
+                    <span>Announcements</span>
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
@@ -156,6 +163,7 @@
                     <span>Change System Color</span>
                 </a>
             </li><!-- End Dashboard Nav -->
+            @endif
         </ul>
 
     </aside><!-- End Sidebar-->
