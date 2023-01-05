@@ -33,6 +33,12 @@
     <link href="{{ asset('admin/css/style.css' ) }}" rel="stylesheet">
     @php
     $main_color = \App\Models\SystemColor::first();
+    //if main color is not set, set default color
+    if(!$main_color){
+    $main_color = new \App\Models\SystemColor();
+    $main_color->color = '#0d6efd';
+    $main_color->save();
+    }
     echo '<style>
         :root {
             scroll-behavior: smooth;
@@ -120,7 +126,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="{{ route('home') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -133,7 +139,7 @@
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link " href="sponsors.html">
+                <a class="nav-link " href="{{ route('sponsors.index') }}">
                     <i class="bi bi-grid"></i>
                     <span>Sponsors</span>
                 </a>
@@ -196,32 +202,7 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
 
-    {{-- Toast Notification --}}
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script>
-        var notyf = new Notyf({
-            delay: 9000,
-            position: {
-                x: 'left',
-                y: 'bottom'
-            }
-        });
-        
-        @if(Session::has('success'))
-        notyf.success('{{ session('success') }}');
-        @endif
-        
-        @if(Session::has('error'))
-        notyf.error('{{ session('error') }}');
-        @endif
-        @if(Session::has('warning'))
-        notyf.warning('{{ session('warning') }}');
-        @endif
-        
-        @if(Session::has('info'))
-        notyf.info('{{ session('info') }}');
-        @endif
-    </script>
+   
 
 </body>
 

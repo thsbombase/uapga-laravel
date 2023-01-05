@@ -113,32 +113,6 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
-    {{-- Toast Notification --}}
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script>
-        var notyf = new Notyf({
-            delay: 9000,
-            position: {
-                x: 'left',
-                y: 'bottom'
-            }
-        });
-        
-        @if(Session::has('success'))
-        notyf.success('{{ session('success') }}');
-        @endif
-        
-        @if(Session::has('error'))
-        notyf.error('{{ session('error') }}');
-        @endif
-        @if(Session::has('warning'))
-        notyf.warning('{{ session('warning') }}');
-        @endif
-        
-        @if(Session::has('info'))
-        notyf.info('{{ session('info') }}');
-        @endif
-    </script>
 
 </body>
 

@@ -51,61 +51,6 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4 ms-auto order-2">
-                <h2 class="mb-4">Lorem ipsum dolor</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
-                    reprehenderit optio,
-                    laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit
-                    incidunt
-                    dolore mollitia esse natus beatae.</p>
-            </div>
-            <div class="col-md-6" data-aos="fade-right">
-                <img src="assets/img/undraw_svg_3.svg" alt="Image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section pb-0">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4 me-auto">
-                <h2 class="mb-4">Lorem ipsum dolor</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
-                    reprehenderit optio,
-                    laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit
-                    incidunt
-                    dolore mollitia esse natus beatae.</p>
-            </div>
-            <div class="col-md-6" data-aos="fade-left">
-                <img src="assets/img/undraw_svg_3.svg" alt="Image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4 ms-auto order-2">
-                <h2 class="mb-4">Lorem ipsum dolor</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
-                    reprehenderit optio,
-                    laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit
-                    incidunt
-                    dolore mollitia esse natus beatae.</p>
-            </div>
-            <div class="col-md-6" data-aos="fade-right">
-                <img src="assets/img/undraw_svg_4.svg" alt="Image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <!-- ======= CTA Section ======= -->
 <section class="section cta-section">
     <div class="container">

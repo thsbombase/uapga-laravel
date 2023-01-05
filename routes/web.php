@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SystemColorController;
+use App\Http\Controllers\SponsorController;
 
 
 /*
@@ -30,4 +31,6 @@ Auth::routes();
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/system-color', [SystemColorController::class, 'store'])->name('system_color');
+
+    Route::resource('sponsors', SponsorController::class);
 });
