@@ -1,11 +1,11 @@
 @extends('layouts.landing')
 @section('content')
- <!-- ======= Blog Section ======= -->
- <section class="hero-section inner-page">
+<!-- ======= Blog Section ======= -->
+<section class="hero-section inner-page">
     <div class="wave">
 
-        <svg width="1920px" height="265px" viewBox="0 0 1920 265" version="1.1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="1920px" height="265px" viewBox="0 0 1920 265" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
                     <path
@@ -87,7 +87,8 @@
                 <h2>Lorem ipsum dolor sit amet</h2>
             </div>
             <div class="col-md-5 text-center text-md-end">
-                <p><a href="#" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a href="#"
+                <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a
+                        href="{{ route('register') }}"
                         class="btn d-inline-flex align-items-center"><span>Register</span></a>
                 </p>
             </div>
@@ -95,4 +96,3 @@
     </div>
 </section><!-- End CTA Section -->
 @endsection
-

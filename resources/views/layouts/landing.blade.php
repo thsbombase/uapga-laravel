@@ -65,8 +65,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class=" @if (Route::currentRouteName() == 'home') active @endif "
-                            href="{{ route('home') }}">Home</a></li>
+                    <li><a class=" @if (Route::currentRouteName() == 'landing') active @endif "
+                            href="{{ route('landing') }}">Home</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'about_us') active @endif "
                             href="{{ route('about_us') }}">About Us</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'partners') active @endif "
@@ -96,14 +96,17 @@
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h3>About UAPGA</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                        aperiam
-                        dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
+                    <p>The United Architects of the Philippines Graduate Auxiliary is the duly recognized graduate arm
+                        of the United Architects of the Philippines (UAP). The organization looks forward to being a
+                        more effective institute in learning today's Architecture Graduates in achieving their dream to
+                        become empowered and equipped Architects of the Philippines.</p>
                     <p class="social">
-                        <a href="#"><span class="bi bi-twitter"></span></a>
-                        <a href="#"><span class="bi bi-facebook"></span></a>
-                        <a href="#"><span class="bi bi-instagram"></span></a>
-                        <a href="#"><span class="bi bi-linkedin"></span></a>
+                        <a href="https://twitter.com/uapganational?fbclid=IwAR2xnzBB9c6sQLq3XWYj4v_iNpRWzvt9f4OGcW_t6ANAkgmIUf9Rc5VDnTo"
+                            target="_blank"><span class="bi bi-twitter"></span></a>
+                        <a href="https://www.facebook.com/theuapganational" target="_blank"><span
+                                class="bi bi-facebook"></span></a>
+                        <a href="https://www.instagram.com/uapganational/?fbclid=IwAR2B8S-9Ah31AncMxFOVE_Dtk7-UMOfKPIs8p5d4PAjSnpErTHzwLq3EQIw"
+                            target="_blank"><span class="bi bi-instagram"></span></a>
                     </p>
                 </div>
             </div>

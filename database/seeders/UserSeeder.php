@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             'email' => 'user@email.com',
             'password' => Hash::make('password123'),
             'role' => 'user',
-            'status' => 'approved'
+            'status' => 'pending'
         ]);
     }
 }

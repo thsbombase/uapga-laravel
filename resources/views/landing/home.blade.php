@@ -27,11 +27,12 @@
                         <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet,
                             consectetur
                             adipisicing elit.</p>
-                        <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#"
-                                class="btn btn-outline-white">Login</a></p>
+                        <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a
+                                href="{{ route('login') }}" class="btn btn-outline-white">Login</a></p>
                     </div>
                     <div class="col-lg-4 iphone-wrap mt-5">
-                        <img src="assets/img/logo.png" alt="Image" class="phone-1  p-3 mt-5" data-aos="fade-right">
+                        <img src="{{ asset('landing/img/logo.png') }}" alt="Image" class="phone-1  p-3 mt-5"
+                            data-aos="fade-right">
                     </div>
                 </div>
             </div>
@@ -45,9 +46,9 @@
 
         <div class="clients-slider swiper">
             <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="assets/img/client-1.png" class="img-fluid" alt="">
+                <div class="swiper-slide"><img src="{{ asset('landing/img/client-1.png') }}" class="img-fluid" alt="">
                 </div>
-                <div class="swiper-slide"><img src="assets/img/client-2.png" class="img-fluid" alt="">
+                <div class="swiper-slide"><img src="{{ asset('landing/img/client-2.png') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -68,7 +69,7 @@
                 <p><a href="#" class="btn btn-primary">Register Now</a></p>
             </div>
             <div class="col-md-6" data-aos="fade-left">
-                <img src="assets/img/undraw_svg_2.svg" alt="Image" class="img-fluid">
+                <img src="{{ asset('landing/img/undraw_svg_2.svg') }}" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -87,7 +88,7 @@
                 <p><a href="#" class="btn btn-primary">Register Now</a></p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
-                <img src="assets/img/undraw_svg_3.svg" alt="Image" class="img-fluid">
+                <img src="{{ asset('landing/img/undraw_svg_3.svg') }}   " alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -101,7 +102,8 @@
                 <h2>Lorem ipsum dolor sit amet</h2>
             </div>
             <div class="col-md-5 text-center text-md-end">
-                <p><a href="#" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a href="#"
+                <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a
+                        href="{{ route('register') }}"
                         class="btn d-inline-flex align-items-center"><span>Register</span></a>
                 </p>
             </div>

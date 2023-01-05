@@ -22,7 +22,7 @@ use App\Http\Controllers\AnnouncementController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::view('/', 'landing.home')->name('home');
+Route::view('/', 'landing.home')->name('landing');
 Route::view('/about-us', 'landing.about_us')->name('about_us');
 Route::view('/partners', 'landing.partners')->name('partners');
 Route::view('/contact-us', 'landing.contact')->name('contact_us');
@@ -31,6 +31,7 @@ Route::view('/admin-dashboard', 'admin.dashboard')->name('admin');
 Auth::routes();
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('/scanner', 'admin.scanner')->name('scanner');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/system-color', [SystemColorController::class, 'store'])->name('system_color');
 

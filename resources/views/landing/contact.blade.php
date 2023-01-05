@@ -22,8 +22,9 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center hero-text">
                         <h1 data-aos="fade-up" data-aos-delay="">Get in touch</h1>
-                        <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.</p>
+                        {{-- <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet,
+                            consectetur
+                            adipisicing elit.</p> --}}
                     </div>
                 </div>
             </div>
@@ -38,9 +39,9 @@
             <div class="col-md-6" data-aos="fade-up">
 
                 <h2>Contact Us</h2>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus
+                {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus
                     incidunt ut
-                    officiis explicabo inventore.</p>
+                    officiis explicabo inventore.</p> --}}
             </div>
 
         </div>
@@ -50,15 +51,11 @@
                 <ul class="list-unstyled">
                     <li class="mb-3">
                         <strong class="d-block mb-1">Address</strong>
-                        <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
-                    </li>
-                    <li class="mb-3">
-                        <strong class="d-block mb-1">Phone</strong>
-                        <span>+1 232 3235 324</span>
+                        <span>53 Scout Rallos Street, Laging Handa, Diliman 1101 Quezon City, Philippines</span>
                     </li>
                     <li class="mb-3">
                         <strong class="d-block mb-1">Email</strong>
-                        <span>youremail@domain.com</span>
+                        <span>national@uapga.org</span>
                     </li>
                 </ul>
             </div>
@@ -66,8 +63,8 @@
             <div class="col-md-6 mb-5 mb-md-0 map" data-aos="fade-up">
 
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.379857581716!2d121.03199531475953!3d14.634365989780969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ad508553b5%3A0x7ad324c625079e82!2s53%20Scout%20Rallos%20St%2C%20Diliman%2C%20Quezon%20City%2C%201103%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1672903664692!5m2!1sen!2sph"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
 
@@ -84,7 +81,8 @@
                 <h2>Lorem ipsum dolor sit amet</h2>
             </div>
             <div class="col-md-5 text-center text-md-end">
-                <p><a href="#" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a href="#"
+                <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a
+                        href="{{ route('register') }}"
                         class="btn d-inline-flex align-items-center"><span>Register</span></a>
                 </p>
             </div>

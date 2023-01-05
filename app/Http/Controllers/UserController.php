@@ -80,6 +80,14 @@ class UserController extends Controller
             'status' => 'required',
         ]);
 
+
+        if ($request->status == 'approved') {
+            $code = uniqid();
+            $user->update([
+                'code' => $code,
+            ]);
+        }
+
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -98,7 +106,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $user = User::find($id);
         $user->delete();
 

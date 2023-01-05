@@ -124,7 +124,6 @@
     <aside id="sidebar" class="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="bi bi-grid"></i>
@@ -132,12 +131,24 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
+            @if (Auth::user()->role == 'user')
             <li class="nav-item">
                 <a class="nav-link " href="card.html">
                     <i class="bi bi-postcard"></i>
                     <span>My Card</span>
                 </a>
             </li><!-- End Dashboard Nav -->
+            @endif
+
+            @if (Auth::user()->role == 'admin' || Auth::user()->role == 'sponsor')
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('scanner') }}">
+                    <i class="bi bi-qr-code-scan"></i>
+                    <span>QR Scanner</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            @endif
+
             @if (Auth::user()->role == 'admin')
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('announcements.index') }}">
@@ -215,8 +226,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/js/main.js') }}"></script>
-
-
+    @stack('scripts')
 
 </body>
 
