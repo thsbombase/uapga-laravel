@@ -23,6 +23,7 @@ return new class extends Migration
             $table->enum('status', ['approved', 'pending'])->default('pending');
             $table->string('code')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
