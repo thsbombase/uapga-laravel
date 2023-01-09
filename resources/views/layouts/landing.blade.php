@@ -69,8 +69,8 @@
                             href="{{ route('landing') }}">Home</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'about_us') active @endif "
                             href="{{ route('about_us') }}">About Us</a></li>
-                    <li><a class=" @if (Route::currentRouteName() == 'partners') active @endif "
-                            href="{{ route('partners') }}">Partners</a></li>
+                    {{-- <li><a class=" @if (Route::currentRouteName() == 'partners') active @endif "
+                            href="{{ route('partners') }}">Partners</a></li> --}}
                     <li><a class=" @if (Route::currentRouteName() == 'contact_us') active @endif "
                             href="{{ route('contact_us') }}">Contact Us</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'login') active @endif "
