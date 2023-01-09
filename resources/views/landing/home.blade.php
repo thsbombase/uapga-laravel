@@ -41,7 +41,7 @@
     </div>
 
 </section><!-- End Hero -->
-<!-- ======= Clients Section ======= -->
+{{-- <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients">
     <div class="container" data-aos="zoom-out">
 
@@ -56,7 +56,8 @@
     </div>
 
     </div>
-</section><!-- End Clients Section -->
+</section><!-- End Clients Section --> --}}
+
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
