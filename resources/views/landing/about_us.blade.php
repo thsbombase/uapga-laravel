@@ -33,7 +33,7 @@
 
 </section>
 
-<section class="section mb-0 p-0">
+<section class="section mb-0 p-0 mt-4">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 me-auto">
@@ -71,12 +71,30 @@
         </div>
     </div>
 </section>
+<section class="section mb-0 p-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12 me-auto">
+                <h2 class="mb-4">What do we do? </h2>
+                <p class="mb-4">Through programs and events that will broaden their knowledge in variety of interest
+                    areas, UAPGA is committed to helping architecture gradates enance their careers as they make
+                    transition from being apprentice architects to full-fledged architects. A few of the events that
+                    make up the aim include forums, design competitions, and seminars and career orientation. </p>
+            </div>
 
+        </div>
+    </div>
+</section>
 <section class="section mt-0">
     <div class="container text-center">
         <h2>
             Organizational Chart
         </h2>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="{{ asset('landing/img/NBD_ORGANIZATIONALCHART.png') }}" alt="Image" class="img-fluid mb-5">
+            </div>
+        </div>
     </div>
 </section>
 <!-- ======= CTA Section ======= -->
@@ -84,7 +102,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 me-auto text-center text-md-start mb-5 mb-md-0">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>A lot of perks and benefits await you as you become a member for this Fiscal Year! What are you
+                    waiting for? Register now!</h2>
             </div>
             <div class="col-md-5 text-center text-md-end">
                 <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a

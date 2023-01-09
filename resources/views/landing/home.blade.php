@@ -23,10 +23,11 @@
             <div class="col-12 hero-text-image">
                 <div class="row">
                     <div class="col-lg-8 text-center text-lg-start ">
-                        <h1 data-aos="fade-right">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
-                        <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet,
+                        <h1 data-aos="fade-right">Embrace the change, be part of the growth, experience the
+                            metamorphosis.</h1>
+                        {{-- <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet,
                             consectetur
-                            adipisicing elit.</p>
+                            adipisicing elit.</p> --}}
                         <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a
                                 href="{{ route('login') }}" class="btn btn-outline-white">Login</a></p>
                     </div>
@@ -60,13 +61,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 me-auto">
-                <h2 class="mb-4">Lorem ipsum dolor</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
+                <h2 class="mb-4">As we celebrate the 18th year of the United Architects of the Philippines Graduate
+                    Auxiliary, we continue to move forward to find new ways to evolve and transform. A new opportunity
+                    to go above and beyond the metaverse. An objective to make bolder movements toward a larger impact.
+                </h2>
+                {{-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
                     reprehenderit optio,
                     laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit
                     incidunt
-                    dolore mollitia esse natus beatae.</p>
-                <p><a href="#" class="btn btn-primary">Register Now</a></p>
+                    dolore mollitia esse natus beatae.</p> --}}
+                {{-- <p><a href="#" class="btn btn-primary">Register Now</a></p> --}}
             </div>
             <div class="col-md-6" data-aos="fade-left">
                 <img src="{{ asset('landing/img/undraw_svg_2.svg') }}" alt="Image" class="img-fluid">
@@ -79,13 +83,14 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 ms-auto order-2">
-                <h2 class="mb-4">Lorem ipsum dolor</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
+                <h2 class="mb-4">Be a member. Be part of the meta-zone. Be part of UAPGA META, Future Architects!
+                </h2>
+                {{-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at
                     reprehenderit optio,
                     laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit
                     incidunt
                     dolore mollitia esse natus beatae.</p>
-                <p><a href="#" class="btn btn-primary">Register Now</a></p>
+                <p><a href="#" class="btn btn-primary">Register Now</a></p> --}}
             </div>
             <div class="col-md-6" data-aos="fade-right">
                 <img src="{{ asset('landing/img/undraw_svg_3.svg') }}   " alt="Image" class="img-fluid">
@@ -99,7 +104,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 me-auto text-center text-md-start mb-5 mb-md-0">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>A lot of perks and benefits await you as you become a member for this Fiscal Year! What are you
+                    waiting for? Register now!</h2>
             </div>
             <div class="col-md-5 text-center text-md-end">
                 <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a
