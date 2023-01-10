@@ -42,7 +42,7 @@
 
 </section><!-- End Hero -->
 {{-- <!-- ======= Clients Section ======= -->
-<section id="clients" class="clients">
+<section id="clients" classd="clients">
     <div class="container" data-aos="zoom-out">
 
         <div class="clients-slider swiper">

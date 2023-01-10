@@ -39,6 +39,13 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label for="position" class="col-sm-2 col-form-label">
+                                Position </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " name="position" value="{{ $user->position }}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label for="type" class="col-sm-2 col-form-label">Role</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="role">

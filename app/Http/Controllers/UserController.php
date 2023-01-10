@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Excel;
+use App\Imports\UsersImport;
+
 
 class UserController extends Controller
 {
@@ -111,5 +114,21 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
+    }
+
+    public function uploadCSV(Request $request)
+    {
+
+        // $this->validate($request, [
+        //     'excel' => 'required| mimes:xls,xlsx'
+        // ]);
+
+        $path1  = $request->file('excel')->store('temp');;
+        $path = storage_path('app') . '/' . $path1;
+
+        if (Excel::import(new UsersImport, $path))
+            return redirect()->route('users.index')->with('success', 'Users Data imported successfully');
+
+        return redirect()->route('users.index')->with('success', 'Excel imported successfully');
     }
 }
