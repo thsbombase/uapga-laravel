@@ -71,6 +71,13 @@
                             href="{{ route('about_us') }}">About Us</a></li>
                     {{-- <li><a class=" @if (Route::currentRouteName() == 'partners') active @endif "
                             href="{{ route('partners') }}">Partners</a></li> --}}
+                    <li class="dropdown"><a href="#" class="pe-none"><span>Our Partners</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{ route('partners') }}">Partners</a></li>
+                            <li><a href="{{ route('sponsors') }}">Sponsors</a></li>
+                        </ul>
+                    </li>
                     <li><a class=" @if (Route::currentRouteName() == 'contact_us') active @endif "
                             href="{{ route('contact_us') }}">Contact Us</a></li>
                     <li><a class=" @if (Route::currentRouteName() == 'login') active @endif "

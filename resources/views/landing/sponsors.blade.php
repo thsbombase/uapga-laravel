@@ -22,7 +22,7 @@
             <div class="col-12">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center hero-text">
-                        <h1 data-aos="fade-up" data-aos-delay="">Partners</h1>
+                        <h1 data-aos="fade-up" data-aos-delay="">Sponsors</h1>
                         {{-- <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet,
                             consectetur
                             adipisicing elit.</p> --}}
