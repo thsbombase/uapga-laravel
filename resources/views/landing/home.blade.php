@@ -42,23 +42,8 @@
     </div>
 
 </section><!-- End Hero -->
-{{--
-<!-- ======= Clients Section ======= -->
-<section id="clients" classd="clients">
-    <div class="container" data-aos="zoom-out">
 
-        <div class="clients-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="{{ asset('landing/img/client-1.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide"><img src="{{ asset('landing/img/client-2.png') }}" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
-</section><!-- End Clients Section --> --}}
+<x-landing.logos />
 
 <section class="section">
     <div class="container">
