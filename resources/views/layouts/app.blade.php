@@ -45,10 +45,6 @@
         body {
             background-color: '. $main_color->color .';
         }
-
-        .navbar {
-            background-color: '. $main_color->color .';
-        }
     </style>'
     @endphp
 
@@ -56,7 +52,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('landing') }}">
                     <img src="{{ asset('landing/img/UAP.png') }}" alt="" class="img-fluid" width="90">
@@ -79,13 +75,13 @@
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else

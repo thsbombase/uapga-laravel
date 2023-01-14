@@ -22,17 +22,18 @@
         <div class="row align-items-center">
             <div class="col-12 hero-text-image">
                 <div class="row">
-                    <div class="col-lg-8 text-center text-lg-start ">
-                        <h1 data-aos="fade-right">Embrace the change, be part of the growth, experience the
-                            metamorphosis.</h1>
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <h1 data-aos="fade-right">Embrace the change,<br>
+                            Be part of the growth,<br>
+                            Experience the Metamorphosis.</h1>
                         {{-- <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet,
                             consectetur
                             adipisicing elit.</p> --}}
                         <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a
                                 href="{{ route('login') }}" class="btn btn-outline-white">Login</a></p>
                     </div>
-                    <div class="col-lg-4 iphone-wrap mt-5">
-                        <img src="{{ asset('landing/img/logo.png') }}" alt="Image" class="phone-1  p-3 mt-5"
+                    <div class="col-lg-4 iphone-wrap text-center ms-auto ">
+                        <img src="{{ asset('landing/img/logo.png') }}" alt="Image" class="phone-1 p-3 mt-5"
                             data-aos="fade-right">
                     </div>
                 </div>
