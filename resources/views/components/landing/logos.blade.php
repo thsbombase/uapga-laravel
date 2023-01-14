@@ -3,13 +3,20 @@
     <div class="container" data-aos="zoom-out">
         <div class="clients-slider swiper">
             <div class="swiper-wrapper align-items-center">
-                @forelse ( $logos as $logo )
+                @if($logos->isNotEmpty())
+                @foreach ($logos as $logo)
+
                 <div class="swiper-slide"><img src="{{ asset('images/sponsors/'. $logo->company_logo ) }}"
                         class="img-fluid" alt="">
                 </div>
-                @empty
 
-                @endforelse
+
+                @endforeach
+                @else
+
+
+
+                @endif
 
             </div>
         </div>

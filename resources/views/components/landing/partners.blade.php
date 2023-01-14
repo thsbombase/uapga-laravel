@@ -1,5 +1,8 @@
 <div class="row mb-5">
-    @forelse ($partners as $partner )
+
+    @if($partners->isNotEmpty())
+    @foreach ($partners as $partner)
+
     <div class="col-md-4">
         <a href="{{ $partner->company_url }}" target="_blank">
             <div class="post-entry">
@@ -11,9 +14,12 @@
             </div>
         </a>
     </div>
-    @empty
 
-    @endforelse
+    @endforeach
+    @else
 
+
+
+    @endif
 
 </div>
