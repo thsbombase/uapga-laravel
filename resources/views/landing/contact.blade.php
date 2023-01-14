@@ -47,8 +47,21 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 ms-auto order-2" data-aos="fade-up">
-                <ul class="list-unstyled">
+            <div class="col-md-4 ms-auto order-2 " data-aos="fade-up">
+                <div class="card shadow shadow-sm">
+                    <div class=" card-body">
+                        <h5 class="card-title">Address</h5>
+                        <p class="card-text">53 Scout Rallos Street, Laging Handa, Diliman 1101 Quezon City, Philippines
+                        </p>
+                    </div>
+                </div>
+                <div class="card mt-3 shadow shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Email</h5>
+                        <p class="card-text">national@uapga.org</p>
+                    </div>
+                </div>
+                {{-- <ul class="list-unstyled m-5">
                     <li class="mb-3">
                         <strong class="d-block mb-1">Address</strong>
                         <span>53 Scout Rallos Street, Laging Handa, Diliman 1101 Quezon City, Philippines</span>
@@ -57,10 +70,10 @@
                         <strong class="d-block mb-1">Email</strong>
                         <span>national@uapga.org</span>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
 
-            <div class="col-md-6 mb-5 mb-md-0 map" data-aos="fade-up">
+            <div class="col-md-8 mb-5 mb-md-0 map" data-aos="fade-up">
 
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.379857581716!2d121.03199531475953!3d14.634365989780969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ad508553b5%3A0x7ad324c625079e82!2s53%20Scout%20Rallos%20St%2C%20Diliman%2C%20Quezon%20City%2C%201103%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1672903664692!5m2!1sen!2sph"

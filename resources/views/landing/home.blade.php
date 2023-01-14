@@ -64,7 +64,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 me-auto">
-                <h5 class="mb-4">As we celebreate the 18th year of United Architects of the Philippines Graduate
+                <h5 class="mb-4 text-muted">As we celebrate the 18th year of United Architects of the Philippines
+                    Graduate
                     Auxiliary, we continue to move forward to find new ways to evolve and transform.
                     <br> <br>
                     A new opportunity to go above and beyond the metaverse.
@@ -89,7 +90,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 ms-auto order-2">
-                <h5 class="mb-4">Be a Member. <br><br>
+                <h5 class="mb-4 text-muted">Be a Member. <br><br>
                     Be part of the meta-zone.<br><br>
                     Be part of the UAPGA META, Future Architects!
                 </h5>
