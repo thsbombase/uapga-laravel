@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Announcement as AnnouncementModel;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $approved = User::where('status', 'approved')->count();
+        $pending = User::where('status', 'pending')->count();
+        $sponsors = Sponsor::count();
+
+        $announcements = AnnouncementModel::orderBy('date', 'desc')->take(10)->get();
+
+        $pendings = User::where('status', 'pending')->orderBy('created_at', 'desc')->take(5)->get();
+        return view('admin.dashboard', compact('approved', 'pending', 'sponsors', 'announcements', 'pendings'));
     }
 }

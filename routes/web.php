@@ -26,6 +26,16 @@ Route::get('/', function () {
 })->name('landing');
 
 Route::view('/about-us', 'landing.about_us')->name('about_us');
+
+Route::get('/partners', function () {
+    $partners = Sponsor::where('type', 'partner')->get();
+    return view('landing.partners', compact('partners'));
+})->name('partners');
+
+Route::get('/sponsors', function () {
+    $sponsors = Sponsor::where('type', 'sponsor')->get();
+    return view('landing.sponsors', compact('sponsors'));
+})->name('landing');
 Route::view('/partners', 'landing.partners')->name('partners');
 Route::view('/sponsors', 'landing.sponsors')->name('sponsors');
 Route::view('/contact-us', 'landing.contact')->name('contact_us');
