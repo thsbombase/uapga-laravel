@@ -35,9 +35,8 @@ Route::get('/partners', function () {
 Route::get('/sponsors', function () {
     $sponsors = Sponsor::where('type', 'sponsor')->get();
     return view('landing.sponsors', compact('sponsors'));
-})->name('landing');
-Route::view('/partners', 'landing.partners')->name('partners');
-Route::view('/sponsors', 'landing.sponsors')->name('sponsors');
+})->name('sponsors');
+
 Route::view('/contact-us', 'landing.contact')->name('contact_us');
 Route::view('/admin-dashboard', 'admin.dashboard')->name('admin');
 
