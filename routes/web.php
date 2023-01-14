@@ -6,6 +6,7 @@ use App\Http\Controllers\SystemColorController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnnouncementController;
+use App\Models\Sponsor;
 
 
 /*
@@ -19,10 +20,11 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::view('/', 'landing.home')->name('landing');
+Route::get('/', function () {
+    $logos = Sponsor::all();
+    return view('landing.home', compact('logos'));
+})->name('landing');
+
 Route::view('/about-us', 'landing.about_us')->name('about_us');
 Route::view('/partners', 'landing.partners')->name('partners');
 Route::view('/sponsors', 'landing.sponsors')->name('sponsors');
