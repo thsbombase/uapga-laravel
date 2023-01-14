@@ -36,7 +36,9 @@
 
 <section class="section">
     <div class="container">
+
         <x-landing.sponsors />
+
     </div>
 
 </section>

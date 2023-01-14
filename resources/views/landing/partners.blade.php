@@ -36,7 +36,9 @@
 
 <section class="section">
     <div class="container">
+
         <x-landing.partners />
+        
     </div>
 
 </section>
