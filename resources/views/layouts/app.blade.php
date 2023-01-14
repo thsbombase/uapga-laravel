@@ -32,7 +32,7 @@
     //if main color is not set, set default color
     if(!$main_color){
     $main_color = new \App\Models\SystemColor();
-    $main_color->color = '#0d6efd';
+    $main_color->color = '#f75d12';
     $main_color->save();
     }
 
@@ -41,16 +41,25 @@
             scroll-behavior: smooth;
             --main-color: '. $main_color->color .';
         }
+
+        body {
+            background-color: '. $main_color->color .';
+        }
+
+        .navbar {
+            background-color: '. $main_color->color .';
+        }
     </style>'
     @endphp
+
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('landing') }}">
-                    UAPGA
+                    <img src="{{ asset('landing/img/UAP.png') }}" alt="" class="img-fluid" width="90">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -70,13 +79,13 @@
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else

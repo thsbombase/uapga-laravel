@@ -36,7 +36,7 @@
     //if main color is not set, set default color
     if(!$main_color){
     $main_color = new \App\Models\SystemColor();
-    $main_color->color = '#0d6efd';
+    $main_color->color = '#f75d12';
     $main_color->save();
     }
     echo '<style>

@@ -33,7 +33,7 @@
     //if main color is not set, set default color
     if(!$main_color){
     $main_color = new \App\Models\SystemColor();
-    $main_color->color = '#0d6efd';
+    $main_color->color = '#f75d12';
     $main_color->save();
     }
     echo '<style>
@@ -57,10 +57,11 @@
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <div class="logo">
+            <div class="logo mt-3">
                 {{-- <h1><a href="{{ route('landing') }}">UAPGA</a></h1> --}}
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="{{ route('landing') }}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+                <a href="{{ route('landing') }}"><img src="{{ asset('landing/img/UAP.png') }}" alt=""
+                        class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
