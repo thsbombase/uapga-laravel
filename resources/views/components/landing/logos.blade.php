@@ -10,6 +10,7 @@
                 @empty
 
                 @endforelse
+
             </div>
         </div>
     </div>
