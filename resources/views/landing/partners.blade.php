@@ -36,45 +36,7 @@
 
 <section class="section">
     <div class="container">
-        {{-- <div class="row mb-5">
-            <div class="col-md-4">
-                <div class="post-entry">
-                    <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
-                    <div class="post-text mt-4">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="post-entry">
-                    <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
-                    <div class="post-text mt-4">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="post-entry">
-                    <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
-                    <div class="post-text mt-4">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-12 text-center">
-                <span class="p-3 active text-primary">1</span>
-                <a href="#" class="p-3">2</a>
-                <a href="#" class="p-3">3</a>
-                <a href="#" class="p-3">4</a>
-            </div>
-        </div> --}}
+        <x-landing.partners />
     </div>
 
 </section>

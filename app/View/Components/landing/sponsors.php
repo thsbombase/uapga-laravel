@@ -3,6 +3,7 @@
 namespace App\View\Components\landing;
 
 use Illuminate\View\Component;
+use App\Models\Sponsor;
 
 class sponsors extends Component
 {
@@ -23,6 +24,7 @@ class sponsors extends Component
      */
     public function render()
     {
-        return view('components.landing.sponsors');
+        $sponsors = Sponsor::where('type', 'sponsor')->get();
+        return view('components.landing.sponsors', compact('sponsors'));
     }
 }
