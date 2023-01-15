@@ -9,7 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>UAPGA</title>
-
+    <link href="{{ asset('landing/img/UAP.png') }}" rel="icon">
+    <link href="{{ asset('landing/img/UAP.png') }}" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
