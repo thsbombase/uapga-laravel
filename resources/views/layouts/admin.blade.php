@@ -100,6 +100,9 @@
                         <li class="dropdown-header">
                             <h6>{{ Auth::user()->name }}</h6>
                         </li>
+                        <a href="{{ route('users.show' , Auth::user()->id) }}"
+                            class="dropdown-item d-flex align-items-center"><i class="bi bi-lock"></i>Change
+                            Password</a>
 
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();

@@ -51,7 +51,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // 
+
+        return view('admin.users.update_password');
     }
 
     /**
@@ -102,7 +103,7 @@ class UserController extends Controller
                     'code' => uniqid(),
                     'valid_until' => $request->valid_until,
                     'year' => $request->year,
-                    'district_code' => $request->district_code,
+                    'district_code' => strtoupper($request->district_code),
                     'control_number' => $request->control_number,
                 ]);
             }
@@ -164,7 +165,7 @@ class UserController extends Controller
                     'user_id' => $user->id,
                     'code' => uniqid(),
                     'year' => $data['4'],
-                    'district_code' => $data['5'],
+                    'district_code' => strtoupper($data['5']),
                     'control_number' => $data['6'],
                     'valid_until' => $data['7'],
                 ]);
@@ -174,5 +175,26 @@ class UserController extends Controller
         fclose($csvData);
 
         return redirect()->route('users.index')->with('success', 'Users uploaded successfully');
+    }
+
+    //change password
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required',
+            'confirm_password' => 'required|same:new_password',
+        ]);
+
+        if (!Hash::check($request->current_password, auth()->user()->password)) {
+            return redirect()->back()->with('error', 'Current password is incorrect');
+        }
+
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return redirect()->route('home')->with('success', 'Password changed successfully');
     }
 }

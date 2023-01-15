@@ -40,9 +40,21 @@
         </div>
         @elseif (Auth::user()->status == 'approved')
         <div id="qrcode"></div>
-        @else <div class="alert alert-danger">
-            <p>Your account is not yet approved. Please wait for the admin to approve your account.</p>
-        </div>
-        @endif
+        <div class="card mt-3" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text mt-3 text-start"><strong>Card Number:</strong> {{ $card->year . ' ' .
+                    strtoupper($card->district_code) . '
+                    ' .
+                    $card->control_number }}</p>
+                <p class="card-text mt-3 text-start"><strong>Name:</strong> {{ Auth::user()->name }}</p>
+                <p class="card-text mt-3 text-start"><strong>Valid Until:</strong> {{ date('F Y',
+                    strtotime($card->valid_until));
+                    }}
+                </p>
+            </div>
+            @else <div class="alert alert-danger">
+                <p>Your account is not yet approved. Please wait for the admin to approve your account.</p>
+            </div>
+            @endif
 </center>
 @endsection

@@ -16,8 +16,9 @@ class CardController extends Controller
      */
     public function index()
     {
-        //get the lastest card of the user
+    
         $card = Card::where('user_id', auth()->user()->id)->latest()->first();
+
         return view('admin.mycard', compact('card'));
     }
 

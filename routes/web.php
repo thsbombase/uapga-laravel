@@ -54,6 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('admin/sponsors', SponsorController::class);
     Route::resource('users', UserController::class);
+    Route::post('/change-password', [UserController::class, 'changePassword'])->name('change_password');
     Route::post('/user-csv', [UserController::class, 'uploadCSV'])->name('user_csv');
     Route::resource('announcements', AnnouncementController::class);
 });
