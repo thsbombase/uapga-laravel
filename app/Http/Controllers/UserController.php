@@ -84,6 +84,10 @@ class UserController extends Controller
             'email' => 'required',
             'role' => 'required',
             'status' => 'required',
+            'valid_until' => 'required_if:status,approved',
+            'year' => 'required_if:status,approved',
+            'district_code' => 'required_if:status,approved',
+            'control_number' => 'required_if:status,approved',
 
         ]);
 

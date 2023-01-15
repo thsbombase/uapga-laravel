@@ -81,6 +81,9 @@
                             <div class="col-sm-10">
                                 <input type="date" class="form-control " name="valid_until" @if ($card)
                                     value="{{ $card->valid_until }}" @endif>
+                                @error ('valid_until')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -91,12 +94,18 @@
                                     Year </label>
                                 <input type="text" class="form-control " name="year" @if ($card)
                                     value="{{ $card->year }}" @endif>
+                                @error ('year')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <div class="col-sm-3">
                                 <label for="district_code">
                                     District Code </label>
                                 <input type="text" class="form-control " name="district_code" @if ($card)
                                     value="{{ $card->district_code }}" @endif>
+                                @error ('district_code')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-sm-3">
@@ -104,6 +113,9 @@
                                     Chapter Control Number </label>
                                 <input type="text" class="form-control " name="control_number" @if ($card)
                                     value="{{ $card->control_number }}" @endif>
+                                @error ('control_number')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
                         <div class=" mt-3 text-end">
