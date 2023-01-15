@@ -42,8 +42,8 @@
             @if($sponsors->isNotEmpty())
             @foreach ($sponsors as $sponsor)
 
-            <div class="col-md-4">
-                <div class="card d-flex  align-items-stretch">
+            <div class="col-md-4 d-flex  align-items-stretch">
+                <div class="card ">
                     <img src="{{ asset('images/sponsors/'. $sponsor->company_logo ) }}" class="align-self-center"
                         alt="...">
                     <div class="card-body text-center d-flex flex-column">
