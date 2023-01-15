@@ -49,7 +49,7 @@
                             class="card-img-top img-fluid" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ $partner->company_name }}</h5>
+                        <h5 class="card-title text-center">{{ $partner->company_name }}</h5>
                         <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
 
                         <a href="{{ $partner->company_url }}" target="_blank" class="stretched-link"></a>
