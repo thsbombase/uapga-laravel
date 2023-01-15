@@ -996,11 +996,6 @@ section {
   width: 250px;
 }
 
-@media screen and (max-width: 992px) {
-  .hero-section .iphone-wrap .phone-1 {
-    margin-left: -150px;
-  }
-}
 
 .hero-section .iphone-wrap .phone-2 {
   margin-top: 50px;

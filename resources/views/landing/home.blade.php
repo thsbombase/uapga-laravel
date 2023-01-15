@@ -32,7 +32,7 @@
                         <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a
                                 href="{{ route('login') }}" class="btn btn-outline-white">Login</a></p>
                     </div>
-                    <div class="col-lg-4 iphone-wrap text-center ms-auto ">
+                    <div class="col-lg-4 iphone-wrap ms-auto">
                         <img src="{{ asset('landing/img/logo.png') }}" alt="Image" class="phone-1 p-3 mt-5"
                             data-aos="fade-right">
                     </div>
