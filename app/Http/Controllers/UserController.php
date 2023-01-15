@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Card;
-use Excel;
-use App\Imports\UsersImport;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -134,9 +133,33 @@ class UserController extends Controller
         $path1  = $request->file('excel')->store('temp');;
         $path = storage_path('app') . '/' . $path1;
 
-        if (Excel::import(new UsersImport, $path))
-            return redirect()->route('users.index')->with('success', 'Users Data imported successfully');
+        $csvData = fopen($path, 'r');
+        $transRow = true;
+        while (($data = fgetcsv($csvData, 555, ',')) !== false) {
+            if (!$transRow) {
+                $user = User::create([
+                    'email' => $data['0'],
+                    'name' => $data['1'],
+                    'position' => $data['2'],
+                    'role' => $data['3'],
+                    'status' => $data['4'],
+                    'password' => Hash::make($data['5']),
+                ]);
 
-        return redirect()->route('users.index')->with('success', 'Excel imported successfully');
+                Card::create([
+                    'user_id' => $user->id,
+                    'code' => uniqid(),
+                    'area_code' => $data['6'],
+                    'card_number' => $data['7'],
+                    'valid_from' => $data['8'],
+                    'valid_to' => $data['9'],
+                    'status' => 'active',
+                ]);
+            }
+            $transRow = false;
+        }
+        fclose($csvData);
+
+        return redirect()->route('users.index')->with('success', 'Users uploaded successfully');
     }
 }

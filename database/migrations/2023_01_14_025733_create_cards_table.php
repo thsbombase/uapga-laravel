@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->dateTime('valid_from');
             $table->dateTime('valid_to');
-            $table->string('card_number');
+            $table->string('area_code');
+            $table->string('card_number')->unique();
             $table->enum('status', ['active', 'expired']);
             $table->timestamps();
         });

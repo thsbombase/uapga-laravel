@@ -9,11 +9,11 @@
         </ol>
     </nav>
 </div><!-- End Page Title -->
-{{-- <button type="button" class="btn btn-primary mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal23">
     Upload CSV
-</button> --}}
+</button>
 <!-- Modal -->
-{{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal23" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @if (\Session::has('success'))
 <div class="alert alert-success">
     {!! \Session::get('success') !!}

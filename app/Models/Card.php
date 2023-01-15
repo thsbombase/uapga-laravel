@@ -12,6 +12,7 @@ class Card extends Model
     protected $fillable = [
         'user_id',
         'code',
+        'area_code',
         'valid_from',
         'valid_to',
         'card_number',
