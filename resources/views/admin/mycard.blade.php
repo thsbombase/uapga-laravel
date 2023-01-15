@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+@if (Auth::user()->status == 'approved')
 <script type="text/javascript">
     //remove title="" from qrcode
     
@@ -16,6 +17,7 @@
     makeCode();
     
 </script>
+@endif
 @endpush
 @section('content')
 <div class="pagetitle">
