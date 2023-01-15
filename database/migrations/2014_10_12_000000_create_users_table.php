@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role', ['admin', 'sponsor', 'user'])->default('user');
             $table->enum('status', ['approved', 'pending'])->default('pending');
-            $table->string('code')->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

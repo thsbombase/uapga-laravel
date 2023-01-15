@@ -64,7 +64,9 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="status">
                                     <option disabled value="" selected>Select status</option>
+                                    @if ($user->status == 'pending')
                                     <option value="pending" @selected($user->status == 'pending')>Pending</option>
+                                    @endif
                                     <option value="approved" @selected($user->status == 'approved')>Approved</option>
                                 </select>
                                 @error ('type')

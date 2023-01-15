@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Card;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class CardController extends Controller
 {
@@ -14,7 +16,9 @@ class CardController extends Controller
      */
     public function index()
     {
-        //
+        //get the lastest card of the user
+        $card = Card::where('user_id', auth()->user()->id)->latest()->first();
+        return view('admin.mycard', compact('card'));
     }
 
     /**
@@ -81,5 +85,31 @@ class CardController extends Controller
     public function destroy(Card $card)
     {
         //
+    }
+
+    public function verifyCard($code)
+    {
+
+        $card = Card::where('code', $code)->firstOrFail();
+        if ($card) {
+            if ($card->valid_to < now()) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Card is expired',
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Card is valid',
+                ]);
+            };
+        }
+    }
+
+    public function verifiedCard($code)
+    {
+        $card = Card::where('code', $code)->firstOrFail();
+        $user = User::where('id', $card->user_id)->firstOrFail();
+        return view('admin.verified', compact('card', 'user'));
     }
 }

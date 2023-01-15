@@ -131,9 +131,9 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            @if (Auth::user()->role == 'user')
+            @if (Auth::user()->role == 'user' || Auth::user()->role == 'admin')
             <li class="nav-item">
-                <a class="nav-link " href="card.html">
+                <a class="nav-link " href="{{ route('card.index') }}">
                     <i class="bi bi-postcard"></i>
                     <span>My Card</span>
                 </a>

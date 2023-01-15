@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Card;
 use Excel;
 use App\Imports\UsersImport;
+
 
 
 class UserController extends Controller
@@ -86,8 +88,14 @@ class UserController extends Controller
 
         if ($request->status == 'approved') {
             $code = uniqid();
-            $user->update([
+            $card = new Card;
+            $card->create([
+                'user_id' => $user->id,
                 'code' => $code,
+                'valid_from' => date('Y-m-d'),
+                'valid_to' => date('Y-m-d', strtotime('+1 year')),
+                'card_number' => $code,
+                'status' => 'active',
             ]);
         }
 

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@email.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',
-            'status' => 'approved',
+            'status' => 'pending',
         ]);
 
         DB::table('users')->insert([
@@ -30,7 +29,7 @@ class UserSeeder extends Seeder
             'email' => 'sponsor@email.com',
             'password' => Hash::make('password123'),
             'role' => 'sponsor',
-            'status' => 'approved'
+            'status' => 'pending',
 
         ]);
 
@@ -40,6 +39,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password123'),
             'role' => 'user',
             'status' => 'pending'
+
         ]);
     }
 }

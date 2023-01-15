@@ -6,6 +6,7 @@ use App\Http\Controllers\SystemColorController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\CardController;
 use App\Models\Sponsor;
 
 
@@ -43,7 +44,11 @@ Route::view('/admin-dashboard', 'admin.dashboard')->name('admin');
 Auth::routes();
 
 Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::resource('card', CardController::class);
     Route::view('/scanner', 'admin.scanner')->name('scanner');
+    Route::get('/verifyCard/{code}', [CardController::class, 'verifyCard'])->name('verifyCard');
+    Route::get('/verifiedCard/{code}', [CardController::class, 'verifiedCard'])->name('verifiedCard');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/system-color', [SystemColorController::class, 'store'])->name('system_color');
 

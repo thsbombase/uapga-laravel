@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->string('code')->unique();
             $table->dateTime('valid_from');
             $table->dateTime('valid_to');
             $table->string('card_number');
