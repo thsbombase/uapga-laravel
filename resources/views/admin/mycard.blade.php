@@ -35,8 +35,14 @@
 </div>
 @endif
 <center>
-    @if (Auth::user()->status == 'approved')
-    <div id="qrcode"></div>
-    @endif
+    @if ($card && $card->valid_until < now()) <div class="alert alert-danger">
+        <p>Your card is already expired.</p>
+        </div>
+        @elseif (Auth::user()->status == 'approved')
+        <div id="qrcode"></div>
+        @else <div class="alert alert-danger">
+            <p>Your account is not yet approved. Please wait for the admin to approve your account.</p>
+        </div>
+        @endif
 </center>
 @endsection

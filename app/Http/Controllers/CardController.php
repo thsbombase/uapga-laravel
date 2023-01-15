@@ -92,7 +92,7 @@ class CardController extends Controller
 
         $card = Card::where('code', $code)->firstOrFail();
         if ($card) {
-            if ($card->valid_to < now()) {
+            if ($card->valid_until < now()) {
                 return response()->json([
                     'status' => 'error',
                     'message' => 'Card is expired',

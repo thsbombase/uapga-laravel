@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->onDelete('cascade')->unique()->constrained();
             $table->string('code')->unique();
-            $table->dateTime('valid_from');
-            $table->dateTime('valid_to');
-            $table->string('area_code');
-            $table->string('card_number')->unique();
-            $table->enum('status', ['active', 'expired']);
+            $table->date('valid_until');
+            $table->string('year');
+            $table->string('district_code');
+            $table->string('control_number');
             $table->timestamps();
         });
     }

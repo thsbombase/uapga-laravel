@@ -17,10 +17,10 @@
 
 <div class="card " style="width: 18rem;">
     <div class="card-body">
-        <p class="card-text mt-3"><strong>Card Number:</strong> {{ $card->card_number }}</p>
+        <p class="card-text mt-3"><strong>Card Number:</strong> {{ $card->year . ' ' . $card->district_code . ' ' .
+            $card->control_number }}</p>
         <p class="card-text mt-3"><strong>Name:</strong> {{ $user->name }}</p>
-        <p class="card-text mt-3"><strong>Validity:</strong> {{ date('M-d-Y', strtotime($card->valid_from)); }} - {{
-            date('M-d-Y', strtotime($card->valid_to)); }}</p>
+        <p class="card-text mt-3"><strong>Valid Until:</strong> {{ date('F Y', strtotime($card->valid_until)); }} </p>
     </div>
 </div>
 <a href="{{ route('scanner') }}" class="btn btn-primary">Scan Again</a>

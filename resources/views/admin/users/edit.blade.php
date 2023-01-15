@@ -74,7 +74,38 @@
                                 @enderror
                             </div>
                         </div>
+                        <h4 class="card-title">Card Details</h4>
+                        <div class="row mb-3">
+                            <label for="valid_until" class="col-sm-2 col-form-label">
+                                Valid Until </label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control " name="valid_until" @if ($card)
+                                    value="{{ $card->valid_until }}" @endif>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label">
+                                Card Number </label>
+                            <div class="col-sm-3">
+                                <label for="year">
+                                    Year </label>
+                                <input type="text" class="form-control " name="year" @if ($card)
+                                    value="{{ $card->year }}" @endif>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="district_code">
+                                    District Code </label>
+                                <input type="text" class="form-control " name="district_code" @if ($card)
+                                    value="{{ $card->district_code }}" @endif>
+                            </div>
 
+                            <div class="col-sm-3">
+                                <label for="control_number">
+                                    Chapter Control Number </label>
+                                <input type="text" class="form-control " name="control_number" @if ($card)
+                                    value="{{ $card->control_number }}" @endif>
+                            </div>
+                        </div>
                         <div class=" mt-3 text-end">
                             <input class="btn btn-success rounded" type="submit" value="Submit">
                         </div>

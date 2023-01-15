@@ -63,7 +63,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.users.edit', compact('user'));
+        $card = Card::where('user_id', $user->id)->first();
+        return view('admin.users.edit', compact('user', 'card'));
     }
 
     /**
@@ -82,20 +83,29 @@ class UserController extends Controller
             'email' => 'required',
             'role' => 'required',
             'status' => 'required',
+
         ]);
 
 
         if ($request->status == 'approved') {
-            $code = uniqid();
-            $card = new Card;
-            $card->create([
-                'user_id' => $user->id,
-                'code' => $code,
-                'valid_from' => date('Y-m-d'),
-                'valid_to' => date('Y-m-d', strtotime('+1 year')),
-                'card_number' => $code,
-                'status' => 'active',
-            ]);
+            $card = Card::where('user_id', $user->id)->first();
+            if ($card) {
+                $card->update([
+                    'valid_until' => $request->valid_until,
+                    'year' => $request->year,
+                    'district_code' => $request->district_code,
+                    'control_number' => $request->control_number,
+                ]);
+            } else {
+                $card = Card::create([
+                    'user_id' => $user->id,
+                    'code' => uniqid(),
+                    'valid_until' => $request->valid_until,
+                    'year' => $request->year,
+                    'district_code' => $request->district_code,
+                    'control_number' => $request->control_number,
+                ]);
+            }
         }
 
         $user->update([
@@ -118,6 +128,10 @@ class UserController extends Controller
     {
 
         $user = User::find($id);
+        $card = Card::where('user_id', $user->id)->first();
+        if ($card) {
+            $card->delete();
+        }
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
@@ -142,18 +156,17 @@ class UserController extends Controller
                     'name' => $data['1'],
                     'position' => $data['2'],
                     'role' => $data['3'],
-                    'status' => $data['4'],
-                    'password' => Hash::make($data['5']),
+                    'status' => 'approved',
+                    'password' => Hash::make('password123'),
                 ]);
 
                 Card::create([
                     'user_id' => $user->id,
                     'code' => uniqid(),
-                    'area_code' => $data['6'],
-                    'card_number' => $data['7'],
-                    'valid_from' => $data['8'],
-                    'valid_to' => $data['9'],
-                    'status' => 'active',
+                    'year' => $data['4'],
+                    'district_code' => $data['5'],
+                    'control_number' => $data['6'],
+                    'valid_until' => $data['7'],
                 ]);
             }
             $transRow = false;
