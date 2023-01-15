@@ -42,15 +42,17 @@
             @if($sponsors->isNotEmpty())
             @foreach ($sponsors as $sponsor)
 
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    
                     <img src="{{ asset('images/sponsors/'. $sponsor->company_logo ) }}" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body text-center">
                         <h5 class="card-title">{{ $sponsor->company_name }}</h5>
                         <p class="card-text">Contact Person: {{ $sponsor->company_contact_person }}</p>
 
                         <a href="{{ $sponsor->company_url }}" target="_blank" class="stretched-link"></a>
                     </div>
+
                 </div>
 
             </div>
