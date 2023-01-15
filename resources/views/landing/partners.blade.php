@@ -43,16 +43,16 @@
             @foreach ($partners as $partner)
 
             <div class="col-md-4 d-flex align-items-stretch">
-                <a href="{{ $partner->company_url }}" target="_blank">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}" class="card-img-top"
-                            alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $partner->company_name }}</h5>
-                            <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
-                        </div>
+                <div class="card">
+                    <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $partner->company_name }}</h5>
+                        <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
+
+                        <a href="{{ $partner->company_url }}" target="_blank" class="stretched-link"></a>
                     </div>
-                </a>
+                </div>
+
             </div>
 
             @endforeach
