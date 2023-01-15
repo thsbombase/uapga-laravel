@@ -44,9 +44,8 @@
 
             <div class="col-md-4">
                 <div class="card h-100">
-                    <div>
-                        <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}" class="img-fluid" alt="...">
-                    </div>
+                    <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}" class="card-img-bottom"
+                        alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $partner->company_name }}</h5>
                         <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
