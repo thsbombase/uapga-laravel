@@ -196,7 +196,8 @@
                 <div class="modal-body">
                     <form action="{{ route('system_color') }}" method="POST">
                         @csrf
-                        <input type="color" name="color" @if ($main_color->color) value="{{ $main_color->color }}"
+                        <input type="color" name="color" class="form-control" @if ($main_color->color) value="{{
+                        $main_color->color }}"
                         @else value="" @endif>
                 </div>
                 <div class="modal-footer">
