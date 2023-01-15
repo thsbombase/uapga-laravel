@@ -44,7 +44,7 @@
 
             <div class="col-md-4 d-flex  align-items-stretch">
                 <div class="card ">
-                    <img src="{{ asset('images/sponsors/'. $sponsor->company_logo ) }}" class="align-self-center"
+                    <img src="{{ asset('images/sponsors/'. $sponsor->company_logo ) }}" class="align-self-center img-fluid"
                         alt="...">
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title">{{ $sponsor->company_name }}</h5>
