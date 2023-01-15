@@ -45,7 +45,7 @@
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="h-50">
-                        <img src="{{ asset('images/sponsors/'. $sponsor->company_logo ) }}"
+                        <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}"
                             class="card-img-top img-fluid" alt="...">
                     </div>
                     <div class="card-body">
