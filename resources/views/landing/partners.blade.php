@@ -42,19 +42,23 @@
             @if($partners->isNotEmpty())
             @foreach ($partners as $partner)
 
-            <div class="col-md-4 d-flex  align-items-stretch">
-                <div class="card">
+            <div class="col-md-4 d-flex  align-items-stretch mt-3">
+                <div class="card w-100 flex">
                     <img src="{{ asset('images/sponsors/'. $partner->company_logo ) }}"
                         class="align-self-center img-fluid" alt="...">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title ">{{ $partner->company_name }}</h5>
-                        <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
+                    <div class="card-body  d-flex align-items-end">
+                        <div class="card-body text-center ">
+                            <h5 class="card-title">{{ $partner->company_name }}</h5>
+                            <p class="card-text">Contact Person: {{ $partner->company_contact_person }}</p>
 
-                        <a href="{{ $partner->company_url }}" target="_blank" class="stretched-link"></a>
+                            <a href="{{ $partner->company_url }}" target="_blank" class="stretched-link"></a>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
+
 
             @endforeach
             @else
