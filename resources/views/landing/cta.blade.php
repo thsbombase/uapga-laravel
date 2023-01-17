@@ -9,9 +9,13 @@
                     Register now!</h5>
             </div>
             <div class="col-md-5 text-center text-md-end">
-                <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center"><span>Login</span></a> <a
-                        href="{{ route('register') }}"
-                        class="btn d-inline-flex align-items-center"><span>Register</span></a>
+                @php
+                $main_color = \App\Models\SystemColor::first();
+                @endphp
+                <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center bg-white"
+                        style="color: {{ $main_color->color }};"><span>Login</span></a> <a
+                        href="{{ route('register') }}" class="btn d-inline-flex align-items-center bg-white"
+                        style="color: {{ $main_color->color }};"><span>Register</span></a>
                 </p>
             </div>
         </div>
