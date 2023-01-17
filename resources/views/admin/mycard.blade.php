@@ -85,22 +85,9 @@
         text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
     }
 
-    #qrcode {
-        width: 100px;
-        position: absolute;
-        left: 450px;
-        bottom: 12px;
-    }
-
-    .details {
-        position: absolute;
-        left: 315px;
-        bottom: 33px;
-    }
-
     /* responsive .flip>.front,
     .flip>.back and .flip for mobile*/
-    @media (max-width: 767px) {
+    /* @media (max-width: 767px) {
         .flip {
             width: 100%;
         }
@@ -109,29 +96,18 @@
         .flip>.back {
             height: 223px;
         }
-
-        #qrcode {
-            width: 70px;
-
-            left: 86%;
-            bottom: 15px;
-            transform: translateX(-50%);
-        }
-
-        .details {
-            position: absolute;
-            left: 55%;
-            bottom: 23px;
-            transform: translateX(-50%);
-        }
-    }
+    } */
 </style>
 @endpush
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
 @if (Auth::user()->status == 'approved')
 <script type="text/javascript">
-    var qrcode = new QRCode("qrcode");
+    var qrcode = new QRCode("qrcode" , {
+        width: 100,
+        height: 100,
+        correctLevel : QRCode.CorrectLevel.H
+    });
 
     function makeCode () {  
         var elText = '{{ $card->code }}';
@@ -162,26 +138,32 @@
     {!! \Session::get('success') !!}
 </div>
 @endif
-<center>
+<div class="text-center">
     @if ($card && $card->valid_until < now()) <div class="alert alert-danger">
         <p>Your card is already expired.</p>
-        </div>
+
         @elseif (Auth::user()->status == 'approved')
         <div class="flip me-2">
-            <div class="front" style="background-image: url('{{ asset('admin/img/FRONT_OPTION 1.webp') }}');">
-                <div id="qrcode"></div>
-                <div class="details">
-                    <p class="card-text text-end text-white m-0" style="font-size: 11px">{{ $card->year . ' ' .
-                        strtoupper($card->district_code) . '
-                        ' .
-                        $card->control_number }}</p>
-                    <h5 class="card-text text-end text-white m-0 ">{{ Auth::user()->name }}</h5>
-                    <p class="card-text text-end text-white m-0" style="font-size: 10px">{{ Auth::user()->position }}
-                    </p>
-                    <p class="card-text text-end text-white m-0" style="font-size: 9px">{{ date('F Y',
-                        strtotime($card->valid_until));
-                        }}
-                    </p>
+            <div class="front w-100 flex"
+                style="background-image: url('{{ asset('admin/img/FRONT_OPTION 1.webp') }}');">
+                <div class=" d-flex align-items-end justify-content-end h-100 w-100 ">
+
+                    <div>
+                        <p class="card-text text-end text-white m-0 pt-3" style="font-size: 11px">{{ $card->year . ' ' .
+                            strtoupper($card->district_code) . '
+                            ' .
+                            $card->control_number }}</p>
+                        <h5 class="card-text text-end text-white m-0 ">{{ Auth::user()->name }}</h5>
+                        <p class="card-text text-end text-white m-0" style="font-size: 10px">{{ Auth::user()->position
+                            }}
+                        </p>
+                        <p class="card-text text-end text-white m-0" style="font-size: 9px">{{ date('F Y',
+                            strtotime($card->valid_until));
+                            }}
+                        </p>
+                    </div>
+                    <div id="qrcode" class="float-end ms-2 "></div>
+
                 </div>
             </div>
             <div class="back" style="background-image: url('{{ asset('admin/img/BACK_OPTION 1.webp') }}')">
@@ -191,5 +173,5 @@
             <p>Your account is not yet approved. Please wait for the admin to approve your account.</p>
         </div>
         @endif
-</center>
-@endsection
+        </center>
+        @endsection
