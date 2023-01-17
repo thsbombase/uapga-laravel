@@ -57,7 +57,7 @@
         display: inline-block;
         margin-right: 2px;
         margin-bottom: 1em;
-        width: 586px;
+        width: 566px;
     }
 
     .flip>.front,
@@ -65,12 +65,13 @@
         display: block;
         color: white;
         width: inherit;
-        background-size: cover !important;
+        background-size: contain !important;
         background-position: center !important;
-        height: 356px;
+        background-repeat: no-repeat !important;
+        height: 358px;
         padding: 1em 2em;
-        background: #313131;
-        border-radius: 10px;
+        background: #f9f8f800;
+        border-radius: 18px;
     }
 
     .flip>.front p,
@@ -87,14 +88,42 @@
     #qrcode {
         width: 100px;
         position: absolute;
-        left: 470px;
+        left: 450px;
         bottom: 12px;
     }
 
     .details {
         position: absolute;
-        left: 335px;
+        left: 315px;
         bottom: 33px;
+    }
+
+    /* responsive .flip>.front,
+    .flip>.back and .flip for mobile*/
+    @media (max-width: 767px) {
+        .flip {
+            width: 100%;
+        }
+
+        .flip>.front,
+        .flip>.back {
+            height: 223px;
+        }
+
+        #qrcode {
+            width: 70px;
+            position: absolute;
+            left: 86%;
+            bottom: 15px;
+            transform: translateX(-50%);
+        }
+
+        .details {
+            position: absolute;
+            left: 55%;
+            bottom: 23px;
+            transform: translateX(-50%);
+        }
     }
 </style>
 @endpush
@@ -139,7 +168,7 @@
         </div>
         @elseif (Auth::user()->status == 'approved')
         <div class="flip me-2">
-            <div class="front" style="background-image: url('{{ asset('admin/img/FRONT_OPTION 1.webp') }}')">
+            <div class="front" style="background-image: url('{{ asset('admin/img/FRONT_OPTION 1.webp') }}');">
                 <div id="qrcode"></div>
                 <div class="details">
                     <p class="card-text text-end text-white m-0" style="font-size: 11px">{{ $card->year . ' ' .
