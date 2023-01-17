@@ -112,7 +112,7 @@
 
         #qrcode {
             width: 70px;
-            position: absolute;
+
             left: 86%;
             bottom: 15px;
             transform: translateX(-50%);
