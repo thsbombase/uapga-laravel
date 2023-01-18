@@ -13,7 +13,7 @@
     .flip>.back {
         display: block;
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transition-duration: 0.5s;
+        transition-duration: 1s;
         transition-property: transform, opacity;
     }
 
@@ -31,11 +31,11 @@
         transform: rotateY(-180deg);
     }
 
-    .flip:hover>.front {
+    .flip:active>.front {
         transform: rotateY(180deg);
     }
 
-    .flip:hover>.back {
+    .flip:active>.back {
         opacity: 1;
         transform: rotateY(0deg);
     }
@@ -44,11 +44,11 @@
         transform: rotateX(-180deg);
     }
 
-    .flip.flip-vertical:hover>.front {
+    .flip.flip-vertical:active>.front {
         transform: rotateX(180deg);
     }
 
-    .flip.flip-vertical:hover>.back {
+    .flip.flip-vertical:active>.back {
         transform: rotateX(0deg);
     }
 
