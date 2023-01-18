@@ -58,12 +58,12 @@
             width: 100vw;
             height: 25vh;
         }
-        #qrcode img {
+
+        .qrcodesize {
             justify-content: flex-end;
-            width: 60%;
-            height: 60%;
+            width: 30%;
+            height: 40%;
         }
-        
     }
 </style>
 @endpush
@@ -71,11 +71,21 @@
 <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
 @if (Auth::user()->status == 'approved')
 <script type="text/javascript">
-    var qrcode = new QRCode("qrcode" , {
-        width: 100,
-        height: 100,
-        correctLevel : QRCode.CorrectLevel.H
-    });
+    var x = window.matchMedia("(max-width: 700px)")
+    if (x.matches) { // If media query matches
+        var qrcode = new QRCode("qrcode" , {
+            width: 60,
+            height: 60,
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    } else {
+        var qrcode = new QRCode("qrcode" , {
+            width: 100,
+            height: 100,
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+
 
     function makeCode () {  
         var elText = '{{ $card->code }}';
@@ -139,8 +149,7 @@
                                 }}
                             </p>
                         </div>
-                        <div id="qrcode" class=" float-end ms-2  "></div>
-
+                        <div id="qrcode" class=" float-end ms-2 qrcodesize  "></div>
                     </div>
                 </div>
                 <div class="card__face card__face--back"
