@@ -11,8 +11,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons -->
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="icon">
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">

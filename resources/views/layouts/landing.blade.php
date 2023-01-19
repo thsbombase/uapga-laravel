@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="icon">
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link

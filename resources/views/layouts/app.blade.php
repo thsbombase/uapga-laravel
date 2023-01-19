@@ -9,8 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>UAPGA</title>
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="icon">
-    <link href="{{ asset('landing/img/UAP.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="icon">
+    <link href="{{ asset('landing/img/UAPdark.png') }}" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
@@ -56,7 +56,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('landing') }}">
-                    <img src="{{ asset('landing/img/UAP.png') }}" alt="" class="img-fluid" width="90">
+                    <img src="{{ asset('landing/img/UAPdark.png') }}" alt="" class="img-fluid" width="90">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
