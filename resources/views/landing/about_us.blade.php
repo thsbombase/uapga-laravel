@@ -91,7 +91,7 @@
         </h2>
         <div class="row mt-5">
             <div class="col-md-12">
-                <img src="{{ asset('landing/img/NBD_ORGANIZATIONALCHART.png') }}" alt="Image" class="img-fluid mb-5">
+                <img src="{{ asset('landing/img/NBD_ORGANIZATIONALCHART.png') }}" alt="Image" class="img-fluid mb-5 rounded-3">
             </div>
         </div>
     </div>
