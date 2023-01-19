@@ -90,7 +90,7 @@
                 {{-- <p><a href="#" class="btn btn-primary">Register Now</a></p> --}}
             </div>
             <div class="col-md-6" data-aos="fade-left">
-                <img src="{{ asset('landing/img/undraw_svg_2.svg') }}" alt="Image" class="img-fluid">
+                <img src="{{ asset('landing/img/C1.webp') }}" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -112,7 +112,7 @@
                 <p><a href="#" class="btn btn-primary">Register Now</a></p> --}}
             </div>
             <div class="col-md-6" data-aos="fade-right">
-                <img src="{{ asset('landing/img/undraw_svg_3.svg') }}   " alt="Image" class="img-fluid">
+                <img src="{{ asset('landing/img/C2.webp') }}" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>

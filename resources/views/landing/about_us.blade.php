@@ -43,12 +43,12 @@
                     service. </p>
             </div>
             <div class="col-md-6" data-aos="fade-left">
-                <img src="{{ asset('landing/img/undraw_svg_2.svg') }}" alt="Image" class="img-fluid mb-5">
+                <img src="{{ asset('landing/img/C3.png') }}" alt="Image" class="img-fluid mb-5">
             </div>
             <div class="col-md-6 me-auto" data-aos="fade-left">
-                <img src="{{ asset('landing/img/undraw_svg_2.svg') }}" alt="Image" class="img-fluid mb-5">
+                <img src="{{ asset('landing/img/C4.png') }}" alt="Image" class="img-fluid mb-5">
             </div>
-            <div class="col-md-4  mt-5">
+            <div class="col-md-4  mt-5"
                 <h2 class="mb-4">Mission</h2>
                 <p class="mb-4">To <b>ESTABLISH AND PROMOTE</b> the highest standards, in preparation for professional
                     excellence and ethical conduct for the practice and service of architecture; through strict
