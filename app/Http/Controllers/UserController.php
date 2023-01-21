@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Card;
 use Illuminate\Support\Facades\Hash;
-
-
+use League\Csv\Reader;
 
 class UserController extends Controller
 {
@@ -142,46 +141,66 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
     }
 
+
+
     public function uploadCSV(Request $request)
     {
+        function createOrUpdateUser($data)
+        {
+            $role = ['admin', 'sponsor', 'user'];
+            if (!in_array($data['role'], $role)) {
+                $data['role'] = 'user';
+            }
+            $name = ucwords(strtolower($data['name']));
+            $user = User::updateOrCreate(
+                ['email' => $data['email']],
+                [
+                    'name' => $name,
+                    'email' => $data['email'],
+                    'position' => $data['position'],
+                    'role' => $data['role'],
+                    'status' => 'approved',
+                    'password' => Hash::make('password'),
+                ]
+            );
+            return $user;
+        }
 
-        // $this->validate($request, [
-        //     'excel' => 'required| mimes:xls,xlsx'
-        // ]);
+        function createOrUpdateCard($user, $data)
+        {
+
+            $date = date('Y-m-d', strtotime($data['valid_until']));
+            $card = Card::updateOrCreate(
+                [
+                    'user_id' => $user->id,
+                ],
+                [
+                    'code' => uniqid(),
+                    'valid_until' => $date,
+                    'year' => $data['year'],
+                    'district_code' => $data['district_code'],
+                    'control_number' => $data['control_number'],
+                ]
+            );
+            return $card;
+        }
 
         $path1  = $request->file('excel')->store('temp');;
         $path = storage_path('app') . '/' . $path1;
 
-        $csvData = fopen($path, 'r');
-        $transRow = true;
-        while (($data = fgetcsv($csvData, 555, ',')) !== false) {
-            if (!$transRow) {
-                $user = User::create([
-                    'email' => $data['0'],
-                    'name' => $data['1'],
-                    'position' => $data['2'],
-                    'role' => $data['3'],
-                    'status' => 'approved',
-                    'password' => Hash::make('password123'),
-                ]);
+        $csv = Reader::createFromPath($path, 'r');
+        $csv->setHeaderOffset(0);
 
-                Card::create([
-                    'user_id' => $user->id,
-                    'code' => uniqid(),
-                    'year' => $data['4'],
-                    'district_code' => strtoupper($data['5']),
-                    'control_number' => $data['6'],
-                    'valid_until' => $data['7'],
-                ]);
-            }
-            $transRow = false;
+        foreach ($csv->getRecords() as $data) {
+
+            $user = createOrUpdateUser($data);
+
+            createOrUpdateCard($user, $data);
         }
-        fclose($csvData);
 
         return redirect()->route('users.index')->with('success', 'Users uploaded successfully');
     }
 
-    //change password
     public function changePassword(Request $request)
     {
         $request->validate([

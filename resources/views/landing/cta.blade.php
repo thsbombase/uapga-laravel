@@ -11,6 +11,11 @@
             <div class="col-md-5 text-center text-md-end">
                 @php
                 $main_color = \App\Models\SystemColor::first();
+                if(!$main_color){
+                $main_color = new \App\Models\SystemColor();
+                $main_color->color = '#f75d12';
+                $main_color->save();
+                }
                 @endphp
                 <p><a href="{{ route('login') }}" class="btn d-inline-flex align-items-center bg-white"
                         style="color: {{ $main_color->color }};"><span>Login</span></a> <a
