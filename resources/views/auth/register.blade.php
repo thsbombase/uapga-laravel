@@ -67,7 +67,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="role" required>
                                     <option disabled value="" selected>Select Role</option>
-                                    <option value="sponsor">Sponsor and Partner</option>
+                                    <option value="sponsor">Sponsor or Partner</option>
                                     <option value="user">User</option>
                                 </select>
                                 @error ('role')

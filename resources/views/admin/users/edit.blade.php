@@ -51,7 +51,7 @@
                                 <select class="form-control" name="role">
                                     <option disabled value="" selected>Select Role</option>
                                     <option value="admin" @selected($user->role == 'admin')>Admin</option>
-                                    <option value="sponsor" @selected($user->role == 'sponsor')>Sponsor</option>
+                                    <option value="sponsor" @selected($user->role == 'sponsor')>Sponsor or Partner</option>
                                     <option value="user" @selected($user->role == 'user')>User</option>
                                 </select>
                                 @error ('type')
