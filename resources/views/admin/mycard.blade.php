@@ -4,7 +4,7 @@
     .scene {
         display: inline-block;
         /*   border: 1px solid #CCC; */
-        margin: 40px 0;
+        margin: 40px -20px;
         perspective: 600px;
     }
 
@@ -56,7 +56,7 @@
             position: relative;
             margin: 0;
             width: 100vw;
-            height: 25vh;
+            height: 46vw;
         }
 
         .qrcodesize {
@@ -64,6 +64,23 @@
             width: 30%;
             height: 40%;
         }
+
+        .year {
+            font-size: 2vw !important;
+        }
+
+        .name {
+            font-size: 3vw !important;
+        }
+
+        .position {
+            font-size: 2vw !important;
+        }
+
+        .date {
+            font-size: 1.5vw !important;
+        }
+
     }
 </style>
 @endpush
@@ -123,7 +140,7 @@
     {!! \Session::get('success') !!}
 </div>
 @endif
-<div class="text-center m-0 p-0">
+<div class="text-md-center  p-0">
     @if ($card && $card->valid_until < now()) <div class="alert alert-danger">
         <p>Your card is already expired.</p>
 
@@ -134,17 +151,18 @@
                     style="background-image: url('{{ asset('admin/img/FRONT_OPTION 1.webp') }}');">
                     <div class=" d-flex align-items-end justify-content-end h-100 w-100 p-3">
                         <div>
-                            <p class=" text-end text-white m-0" style="font-size: 11px">{{ $card->year . '
+                            <p class=" text-end text-white m-0 year" style="font-size: 0.8vw">{{ $card->year . '
                                 ' .
                                 strtoupper($card->district_code) . '
                                 ' .
                                 $card->control_number }}</p>
-                            <h5 class=" text-end text-white m-0 ">{{ Auth::user()->name }}</h5>
-                            <p class=" text-end text-white m-0" style="font-size: 10px">{{
+                            <h5 class=" text-end text-white m-0 name" style="font-size: 1.5vw">{{ Auth::user()->name }}
+                            </h5>
+                            <p class=" text-end text-white m-0 position" style="font-size: 1vw">{{
                                 Auth::user()->position
                                 }}
                             </p>
-                            <p class=" text-end text-white m-0" style="font-size: 9px">{{ date('F Y',
+                            <p class=" text-end text-white m-0 date" style="font-size: 0.8vw">{{ date('F Y',
                                 strtotime($card->valid_until));
                                 }}
                             </p>
