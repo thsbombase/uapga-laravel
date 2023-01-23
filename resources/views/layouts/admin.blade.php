@@ -163,7 +163,7 @@
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('sponsors.index') }}">
                     <i class="bi bi-building"></i>
-                    <span>Sponsors</span>
+                    <span>Sponsors and Partners</span>
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">

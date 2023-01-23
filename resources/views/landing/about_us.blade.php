@@ -57,10 +57,11 @@
                     the
                     practice of architecture and assimilate them with desirable motivations an values by supporting all
                     the UAPGA activities as deemed necessary; </p>
-                <p class="mb-4">To render appropriate ASSISTANCE to any member partiularly through diversified
+                <p class="mb-4">To <b>render appropriate ASSISTANCE</b> to any member partiularly through diversified
                     experience, filing of licensure exam application, architecture reviews and other concerns related to
                     the practice pf architectural profession; </p>
-                <p class="mb-4">To PARTICIPATE in matters concerning national and regional development of te country;
+                <p class="mb-4">To <b>PARTICIPATE</b> in matters concerning national and regional development of te
+                    country;
                     and </p>
                 <p class="mb-4">To <b>COOPERATE AND COORDINATE</b> with international linkages in the field of
                     architectyre,
@@ -91,7 +92,8 @@
         </h2>
         <div class="row mt-5">
             <div class="col-md-12">
-                <img src="{{ asset('landing/img/NBD_ORGANIZATIONALCHART.png') }}" alt="Image" class="img-fluid mb-5 rounded-3">
+                <img src="{{ asset('landing/img/NBD_ORGANIZATIONALCHART.png') }}" alt="Image"
+                    class="img-fluid mb-5 rounded-3">
             </div>
         </div>
     </div>

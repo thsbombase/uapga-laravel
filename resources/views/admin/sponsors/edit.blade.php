@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="company_logo" class="col-sm-2 col-form-label">Compony Logo</label>
+                            <label for="company_logo" class="col-sm-2 col-form-label">Company Logo</label>
                             <div class="col-sm-10">
                                 <input class="form-control @error('company_logo') is-invalid @enderror" type="file"
                                     id="company_logo" name="company_logo">

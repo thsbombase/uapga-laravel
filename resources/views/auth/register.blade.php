@@ -51,7 +51,7 @@
                             <div class="col-md-6">
                                 <input id="position" type="text"
                                     class="form-control @error('position') is-invalid @enderror" name="position"
-                                    value="{{ old('position') }}" required autocomplete="position">
+                                    value="{{ old('position') }}" autocomplete="position">
 
                                 @error('position')
                                 <span class="invalid-feedback" role="alert">
@@ -65,9 +65,9 @@
                                 }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="role">
+                                <select class="form-control" name="role" required>
                                     <option disabled value="" selected>Select Role</option>
-                                    <option value="sponsor">Sponsor</option>
+                                    <option value="sponsor">Sponsor and Partner</option>
                                     <option value="user">User</option>
                                 </select>
                                 @error ('role')
