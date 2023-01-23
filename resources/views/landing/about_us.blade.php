@@ -57,7 +57,7 @@
                     the
                     practice of architecture and assimilate them with desirable motivations an values by supporting all
                     the UAPGA activities as deemed necessary; </p>
-                <p class="mb-4">To <b>render appropriate ASSISTANCE</b> to any member partiularly through diversified
+                <p class="mb-4">To <b>RENDER APPROPRIATE ASSISTANCE</b> to any member partiularly through diversified
                     experience, filing of licensure exam application, architecture reviews and other concerns related to
                     the practice pf architectural profession; </p>
                 <p class="mb-4">To <b>PARTICIPATE</b> in matters concerning national and regional development of te
