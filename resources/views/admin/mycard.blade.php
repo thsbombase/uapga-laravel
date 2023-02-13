@@ -158,7 +158,7 @@
                                 $card->control_number }}</p>
                             <h5 class=" text-end text-white m-0 name" style="font-size: 1.5vw">{{ Auth::user()->name }}
                             </h5>
-                            <p class=" text-end text-white m-0 position" style="font-size: 1vw">{{
+                            <p class=" text-end text-white m-0 position" style="font-size: 0.5vw">{{
                                 Auth::user()->position
                                 }}
                             </p>
